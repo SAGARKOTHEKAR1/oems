@@ -1,0 +1,18 @@
+<p>viewcategories works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 my-2" *ngFor="let i of categoriData">
+            <mat-card class="example-card">
+                <mat-card-content>
+                      <mat-card-title>{{i.title}}</mat-card-title>
+                      <mat-card-subtitle>{{i.description}}</mat-card-subtitle>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button (click)="deleteCategory(i.category_id)" mat-button>Delete</button>
+                    <button [routerLink]="['../updateCategory/'+i.category_id]" mat-button>Update</button>
+                  </mat-card-actions>
+                </mat-card>
+        </div>
+    </div>
+</div>
+  

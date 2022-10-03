@@ -1,0 +1,33 @@
+<p>updatecategories works!</p>
+<!-- Modal -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 my-5">
+                        <mat-card>
+                         <div class="row">
+                            <mat-card-title class="text-center my-5">ADD CATEGOREIS !!</mat-card-title>
+                            <form [formGroup]="updatecategory" (ngSubmit)="upDateCategory()">
+                                <mat-form-field class="col-12 px-2" appearance="fill" >
+                                    <mat-label>Category Id</mat-label>
+                                    <input matInput name="category_id" formControlName="category_id" [(ngModel)]="categoryData.category_id" type="text">
+                                </mat-form-field>
+                                <mat-form-field class="col-12 px-2" appearance="fill" >
+                                    <mat-label>Title</mat-label>
+                                    <input matInput name="title" formControlName="title" [(ngModel)]="categoryData.title" type="text">
+                                </mat-form-field>
+                        
+                                    <mat-form-field class="col-12 px-2" appearance="fill">
+                                      <mat-label>Description</mat-label>
+                                      <input matInput name="description" formControlName="description" [(ngModel)]="categoryData.description" type="text">
+                                    </mat-form-field>
+            
+                                    <div class="col-12 text-center">
+                                        <button mat-raised-button type="submit" [disabled]="updatecategory.invalid" class="btn mx-2 btn-success">Add Category</button>
+                                        <button mat-raised-button type="reset" class="btn mx-2 btn-danger">reset</button>
+                                    </div>
+                            </form>
+                         </div>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
