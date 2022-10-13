@@ -1,3 +1,4 @@
+<p>updatequizzess works!</p>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6 my-5">
@@ -5,34 +6,38 @@
              <div class="row">
                 <mat-card-title class="text-center my-5">ADD QUIZESS !!</mat-card-title>
                  <!-- <p>signup works!</p> -->
-                <form [formGroup]="addquize" (ngSubmit)="addquizes()">
+                <form [formGroup]="updatequize" (ngSubmit)="updatequizes()">
+                    <mat-form-field class="col-12 px-2" appearance="fill">
+                        <mat-label>Quze Id</mat-label>
+                        <input matInput name="quiz_id" formControlName="quiz_id" [(ngModel)]="category_data.quiz_id" type="number">
+                    </mat-form-field>
                     <mat-form-field class="col-12 px-2" appearance="fill">
                         <mat-label>Title</mat-label>
-                        <input matInput name="title" formControlName="title" type="text">
+                        <input matInput name="title" [(ngModel)]="category_data.title" formControlName="title" type="text">
                     </mat-form-field>
             
                         <mat-form-field class="col-12 px-2" appearance="fill">
                           <mat-label>Description</mat-label>
-                          <input matInput name="description" formControlName="description">
+                          <input matInput name="description" [(ngModel)]="category_data.description" formControlName="description">
                         </mat-form-field>
 
                         <mat-form-field class="col-6 px-2" appearance="fill">
                             <mat-label>Max Marks</mat-label>
-                            <input matInput name="maxMarks" formControlName="maxMarks" type="text">
+                            <input matInput name="maxMarks" [(ngModel)]="category_data.maxMarks" formControlName="maxMarks" type="text">
                         </mat-form-field>
                 
                             <mat-form-field class="col-6 px-2" appearance="fill">
                               <mat-label>Number Of Question</mat-label>
-                              <input matInput name="numberOfQuestions" formControlName="numberOfQuestions">
+                              <input matInput name="numberOfQuestions" [(ngModel)]="category_data.numberOfQuestions" formControlName="numberOfQuestions">
                             </mat-form-field>
 
                             <div class="col-6 px-2" appearance="fill">
-                                <mat-slide-toggle name="active" formControlName="active">Slide me!</mat-slide-toggle>
+                                <mat-slide-toggle name="active" [(ngModel)]="category_data.active" formControlName="active">Slide me!</mat-slide-toggle>
                             </div>
 
                             <mat-form-field class="col-12 px-2" appearance="fill">
-                                <mat-label>Favorite food</mat-label>
-                                <mat-select name="ctegory_Id" formControlName="ctegory_Id">
+                                <mat-label>Category Name</mat-label>
+                                <mat-select name="category_Id" [(ngModel)]="category_data.category.category_id" formControlName="category_Id">
                                   <mat-option *ngFor="let item of category" [value]="item.category_id">
                                     {{item.title}}
                                   </mat-option>
@@ -40,7 +45,7 @@
                               </mat-form-field>
 
                         <div class="col-12 text-center">
-                            <button mat-raised-button type="submit" [disabled]="addquize.invalid" class="btn mx-2 btn-success">Add Category</button>
+                            <button mat-raised-button type="submit" [disabled]="updatequize.invalid" class="btn mx-2 btn-success">Add Category</button>
                             <button mat-raised-button type="reset" class="btn mx-2 btn-danger">reset</button>
                         </div>
                 </form>

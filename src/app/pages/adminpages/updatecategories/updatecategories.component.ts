@@ -52,8 +52,7 @@ export class UpdatecategoriesComponent implements OnInit {
       },
     (error)=>{console.log(error);
     })
-
-        Swal.fire('UPDATE!', '', 'success');
+      Swal.fire('UPDATE!', '', 'success');
         this.router.navigate(['admin/viewCategories'])
       } else if (result.isDenied) {
         Swal.fire('Changes are not Update', '', 'info')

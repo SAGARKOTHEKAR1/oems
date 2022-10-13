@@ -1,0 +1,29 @@
+<p>adcategories works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 my-5">
+            <mat-card>
+             <div class="row">
+                <mat-card-title class="text-center my-5">ADD CATEGOREIS !!</mat-card-title>
+                 <!-- <p>signup works!</p> -->
+                <form [formGroup]="addcategory" (ngSubmit)="addcategories()">
+                    <mat-form-field class="col-12 px-2" appearance="fill">
+                        <mat-label>Title</mat-label>
+                        <input matInput name="title" formControlName="title" type="text">
+                    </mat-form-field>
+            
+                        <mat-form-field class="col-12 px-2" appearance="fill">
+                          <mat-label>Description</mat-label>
+                          <input matInput name="description" formControlName="description">
+                        </mat-form-field>
+
+                        <div class="col-12 text-center">
+                            <button mat-raised-button type="submit" [disabled]="addcategory.invalid" class="btn mx-2 btn-success">Add Category</button>
+                            <button mat-raised-button type="reset" class="btn mx-2 btn-danger">reset</button>
+                        </div>
+                </form>
+             </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

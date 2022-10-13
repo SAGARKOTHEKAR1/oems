@@ -1,1 +1,23 @@
 <p>quizzes works!</p>
+<div class="container-fluid">
+    <div class="row p-3">
+        <mat-card class="my-2" *ngFor="let item of allQuizzess">
+            <mat-card-title>{{item.title}}</mat-card-title>
+            <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
+            <mat-card-actions>
+              <button mat-flat-button class="mx-2" color="primary">QUESTIONS</button>
+              <button mat-stroked-button class="mx-2">Max Marks : {{item.maxMarks}}</button>
+              <button mat-stroked-button class="mx-2">Number Of Questions: {{item.numberOfQuestions}}</button>
+              <button mat-flat-button class="mx-2" [routerLink]="['../Updatequize/'+item.quiz_id]"color="primary">UPDATE</button>
+              <button mat-flat-button class="mx-2" color="primary">ATTEMPTS</button>
+              <button mat-flat-button class="mx-2"(click)="deleteQuize(item.quiz_id)" color="warn">DELETE</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-2">
+      <button routerLink="../adquizzes" class="btn btn-primary">ADD QUIZESS</button>
+ 
+      </div>
+    </div>
+</div>
