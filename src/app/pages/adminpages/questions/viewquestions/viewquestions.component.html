@@ -1,0 +1,40 @@
+<h1 class="mt-20">Question Of {{quiz_title}}</h1>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-2">
+        <button routerLink="../../../add-questions/{{quiz_id}}/{{quiz_title}}" mat-raised-button
+        color="primary">Add Questions</button>
+      </div>
+    </div>
+    <div class="row px-4">
+        <mat-card class="my-2" *ngFor="let item of allQuestion; let i  = index">
+           <mat-card-content>
+            <p><b>Q){{i+1}} </b> <span [innerHTML]="item.content"></span></p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><b>A) </b> <span>{{item.option1}}</span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><b>B) </b> <span>{{item.option2}}</span></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><b>C) </b> <span>{{item.option3}}</span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><b>D) </b> <span>{{item.option4}}</span></p>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <p><b>Correct answer:- </b> <span>{{item.answer}}</span></p>
+            </div>
+           </mat-card-content>
+            <mat-card-actions>
+              <button mat-flat-button (click)="deleteQuestion(item.question_id)"class="mx-2" color="warn">Delete</button>
+              <button mat-flat-button [routerLink]="['../../../updateQuestions/'+item.question_id+'/'+quiz_title]" color="primary">Update</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>

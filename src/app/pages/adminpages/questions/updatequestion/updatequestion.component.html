@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-8 my-2">
+            <h1>Update Question To <b>{{question_title}}</b> ID<b>:- {{question_id}}</b></h1>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-subtitle>
+                        Enter The Detail Of The New Question
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <div class="row">
+                    <form [formGroup]="updateQuestion"(ngSubmit)="updateQuestionSubmit()">
+                        <!-- content password -->
+                        <mat-form-field class="col-md-12 p-2">
+                            <mat-label>Enter Question Content</mat-label>
+                            <textarea required name="content" formControlName="content" [(ngModel)]="updatequestion.content" rows="3" matInput
+                                placeholder="Enter question Content"></textarea>
+                        </mat-form-field>
+                        <!-- option -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="col-md-12 p-2">
+                                    <mat-label>Enter Option : A</mat-label>
+                                    <input name="option1" [(ngModel)]="updatequestion.option1" formControlName="option1"  matInput placeholder="Enter Here"
+                                        required>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="col-md-12 p-2">
+                                    <mat-label>Enter Option : B</mat-label>
+                                    <input name="option2" [(ngModel)]="updatequestion.option2" formControlName="option2"  matInput placeholder="Enter Here"
+                                        required>
+                                </mat-form-field>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="col-md-12 p-2">
+                                    <mat-label>Enter Option : C</mat-label>
+                                    <input name="option3" [(ngModel)]="updatequestion.option3" formControlName="option3"  matInput placeholder="Enter Here"
+                                        required>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="col-md-12 p-2">
+                                    <mat-label>Enter Option : D</mat-label>
+                                    <input name="option4" [(ngModel)]="updatequestion.option4" formControlName="option4"  matInput placeholder="Enter Here"
+                                        required>
+                                </mat-form-field>
+                            </div>
+    
+    
+                        </div>
+                        <!-- answer -->
+                        <mat-form-field class="col-md-12 p-2">
+                            <mat-label>Select Answer</mat-label>
+                            <mat-select required formControlName="answer" [(ngModel)]="updatequestion.answer" name="answer">
+                                <mat-option *ngIf="updatequestion.option1" [value]="updatequestion.option1">{{updatequestion.option1}}</mat-option>
+                                <mat-option *ngIf="updatequestion.option2" [value]="updatequestion.option2">{{updatequestion.option2}}</mat-option>
+                                <mat-option *ngIf="updatequestion.option3" [value]="updatequestion.option3">{{updatequestion.option3}}</mat-option>
+                                <mat-option *ngIf="updatequestion.option4" [value]="updatequestion.option4">{{updatequestion.option4}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class="container text-center">
+                            <button type="submit" [disabled]="updateQuestion.invalid" mat-raised-button color="primary">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

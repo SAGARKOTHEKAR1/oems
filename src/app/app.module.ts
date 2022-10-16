@@ -9,6 +9,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -31,6 +33,10 @@ import { AdcategoriesComponent } from './pages/adminpages/adcategories/adcategor
 import { QuizzesComponent } from './pages/adminpages/quizzes/quizzes.component';
 import { AdquizzesComponent } from './pages/adminpages/adquizzes/adquizzes.component';
 import { UpdatecategoriesComponent } from './pages/adminpages/updatecategories/updatecategories.component';
+import { UpdatequizzessComponent } from './pages/adminpages/updatequizzess/updatequizzess.component';
+import { ViewquestionsComponent } from './pages/adminpages/questions/viewquestions/viewquestions.component';
+import { AddquestionComponent } from './pages/adminpages/questions/addquestion/addquestion.component';
+import { UpdatequestionComponent } from './pages/adminpages/questions/updatequestion/updatequestion.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +53,11 @@ import { UpdatecategoriesComponent } from './pages/adminpages/updatecategories/u
     AdcategoriesComponent,
     QuizzesComponent,
     AdquizzesComponent,
-    UpdatecategoriesComponent
+    UpdatecategoriesComponent,
+    UpdatequizzessComponent,
+    ViewquestionsComponent,
+    AddquestionComponent,
+    UpdatequestionComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +74,9 @@ import { UpdatecategoriesComponent } from './pages/adminpages/updatecategories/u
     FormsModule,
     MatListModule,
     MatSidenavModule,
-    MatTableModule
+    MatTableModule,
+    MatSlideToggleModule,
+    MatSelectModule
 
   ],
   providers: [AuthInterCeptorInterceptorProvider],
